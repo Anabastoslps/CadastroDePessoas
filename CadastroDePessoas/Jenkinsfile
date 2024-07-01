@@ -1,8 +1,9 @@
 pipeline {
     agent any
-
+        tools{
+            maven "maven-3.6.3
     stages {
-        stage('Build') {
+        stage('Maven clean') {
             steps {
                 script {
                     // Limpar e compilar o projeto usando Maven
@@ -10,11 +11,12 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('maven build') {
             steps {
                 script {
                     // Executar os testes do projeto
                     sh 'mvn test'
+                    }
                 }
             }
         }
